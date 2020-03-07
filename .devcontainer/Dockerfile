@@ -70,12 +70,7 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git\
     && cd mecab-ipadic-neologd\
     && bin/install-mecab-ipadic-neologd -n -y
 
- RUN pip install numpy
- RUN pip install pandas
- RUN pip install sklearn
- RUN pip install gensim
- RUN pip install mecab-python3
- RUN pip install Django
- RUN pip install beautifulsoup4
- RUN pip install matplotlib
- RUN pip install slackbot
+RUN apt-get install -y libpq-dev
+COPY requirements.txt /tmp/
+RUN pip install --requirement /tmp/requirements_base.txt
+#COPY . /tmp/
