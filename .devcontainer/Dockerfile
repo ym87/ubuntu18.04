@@ -71,6 +71,6 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git\
     && bin/install-mecab-ipadic-neologd -n -y
 
 RUN apt-get install -y libpq-dev
-COPY requirements.txt /tmp/
+COPY requirements_base.txt /tmp/
 RUN pip install --requirement /tmp/requirements_base.txt
 #COPY . /tmp/
